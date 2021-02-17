@@ -1,29 +1,45 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Courses from "../views/manager/Courses.vue";
+import Events from "../views/manager/Events.vue";
+import Students from "../views/manager/Students.vue";
+import StudentGroups from "../views/manager/StudentGroups.vue";
+import Teacher from "../views/manager/Teacher.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "Courses",
+    component: Courses,
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+    path: "/events",
+    name: "Events",
+    component: Events,
+  },
+  {
+    path: "/students",
+    name: "Students",
+    component: Students,
+  },
+  {
+    path: "/student-groups",
+    name: "StudentGroups",
+    component: StudentGroups,
+  },
+  {
+    path: "/teacher",
+    name: "Teacher",
+    component: Teacher,
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
